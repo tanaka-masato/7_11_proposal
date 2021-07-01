@@ -24,4 +24,18 @@ router.get('/hello', function(req, res, next) {
   res.send(param);
 });
 
+router.post('/retort', function(req, res, next) {
+  res.header('Content-Type', 'application/json; charset=utf-8')
+  console.log("post");
+  console.log(req.body);
+});
+
+router.options('/', (req, res, next) => {
+  res.header('Content-Type', 'application/json; charset=utf-8')
+  console.log("options");
+  // console.log(res)
+  console.log(req.body)
+  console.log(res.body)
+});
+
 module.exports = router;
